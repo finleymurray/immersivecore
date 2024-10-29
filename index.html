@@ -62,6 +62,14 @@
             }
         }
     </style>
+    <script>
+        document.addEventListener("mousemove", (event) => {
+            const fog = document.querySelector('.fog');
+            const x = (event.clientX / window.innerWidth) * 100;
+            const y = (event.clientY / window.innerHeight) * 100;
+            fog.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255, 255, 255, 0.1), transparent 60%), radial-gradient(circle at ${(x + 30) % 100}% ${(y + 30) % 100}%, rgba(255, 255, 255, 0.05), transparent 80%)`;
+        });
+    </script>
 </head>
 <body>
     <div class="fog"></div>
